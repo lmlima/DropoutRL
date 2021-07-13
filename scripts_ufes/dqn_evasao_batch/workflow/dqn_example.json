@@ -1,0 +1,57 @@
+{
+  "training_data_path": "training_data/cartpole_discrete_timeline.json",
+  "eval_data_path": "training_data/cartpole_discrete_timeline_eval.json",
+  "state_norm_data_path": "training_data/state_features_norm.json",
+  "model_output_path": "outputs/",
+  "use_gpu": false,
+  "use_all_avail_gpus": true,
+  "num_nodes": 1,
+  "init_method": "file:///tmp/dqn_example.lock",
+  "norm_params": {
+    "output_dir": "training_data/",
+    "cols_to_norm": [
+      "state_features"
+    ],
+    "feature_overrides" : {
+      "0": "ENUM"
+    },
+    "num_samples": 1000
+  },
+  "actions": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"],
+  "epochs": 10,
+  "rl": {
+    "gamma": 0.99,
+    "target_update_rate": 0.1,
+    "maxq_learning": true,
+    "epsilon": 0.2,
+    "temperature": 0.35,
+    "softmax_policy": 0
+  },
+  "rainbow": {
+    "double_q_learning": true,
+    "dueling_architecture": true
+  },
+  "training": {
+    "layers": [
+      -1,
+      128,
+      128,
+      128,
+      -1
+    ],
+    "activations": [
+      "relu",
+      "relu",
+      "relu",
+      "linear"
+    ],
+    "minibatch_size": 512,
+    "learning_rate": 1.0e-2,
+    "minibatches_per_step" : 10,
+    "optimizer": "ADAM",
+    "lr_decay": 0.999,
+    "l2_decay": 0.999,
+    "warm_start_model_path": null
+  }
+
+}

@@ -1,0 +1,6 @@
+[submodule "ReAgent"]
+	path = ReAgent
+	url = https://github.com/facebookresearch/ReAgent.git
+[submodule "tensorboard-aggregator"]
+	path = tensorboard-aggregator
+	url = https://github.com/Spenhouet/tensorboard-aggregator.git

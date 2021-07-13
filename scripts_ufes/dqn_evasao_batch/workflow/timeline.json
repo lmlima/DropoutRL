@@ -1,0 +1,20 @@
+{
+  "timeline": {
+    "startDs": "2019-01-01",
+    "endDs": "2019-01-01",
+    "addTerminalStateRow": true,
+    "actionDiscrete": true,
+    "inputTableName": "evasao_discrete",
+    "outputTableName": "evasao_discrete_training",
+    "evalTableName": "evasao_discrete_eval",
+    "numOutputShards": 1,
+    "includePossibleActions": true,
+    "percentileFunction": "percentile_approx",
+    "rewardColumns": ["reward", "metrics"],
+    "extraFeatureColumns": []
+  },
+  "query": {
+    "tableSample": 1000,
+    "actions": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"]
+  }
+}

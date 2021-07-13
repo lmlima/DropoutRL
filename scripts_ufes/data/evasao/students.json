@@ -1,0 +1,35 @@
+{
+  "data_path": "/tmp/dados_anon_fulldataset-rl.pkl",
+  "output_path": "outputs/kmeans/",
+  "reward": "SparsePReward",
+  "data": {
+    "id": "ID_CURSO_ALUNO",
+    "step": "PERIODO_ALUNO_last"
+  },
+  "actions":[
+      "PLANO_ESTUDO_last",
+      "TIPO_AUXILIO_last"
+    ],
+  "states": [
+    "CH_CURSO_last",
+    "NUM_PERIODOS_SUGERIDO_last",
+    "NUM_MAX_PERIODOS_last",
+    "MEDIA_FINAL_nanmean", "MEDIA_FINAL_nanstd",
+    "CH_DISCIPLINA_nanmean", "CH_DISCIPLINA_nanstd",
+    "NUM_FALTAS_nanmean", "NUM_FALTAS_nanstd",
+    "COD_DISCIPLINA_count"
+    ],
+  "target": [
+      "FORMA_EVASAO_last"
+    ],
+  "discrete_state": {
+    "use": true,
+    "method": "xmeans",
+    "k_min": 5,
+    "k_max": 1000,
+    "n_clusters": 550,
+    "init": "k-means++",
+    "max_iter": 1000,
+    "n_init": 10
+  }
+}
